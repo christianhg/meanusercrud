@@ -1,7 +1,7 @@
 CRUD app with MEAN JavaScript Full-Stack
 ==============
 
-An application demonstrating the use of the following techonologies
+A boilerplate application demonstrating best practises using the following techonologies:
 - Node.js
 - Express
 - MongoDB
