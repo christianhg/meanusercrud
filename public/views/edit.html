@@ -1,0 +1,18 @@
+<h2>Edit user</h2>
+<form>
+	<input type="hidden" name="_id" ng-model="userData._id">
+	<div class="form-group">
+		<label for="username">Username:</label>
+		<input type="text" name="username" class="form-control" ng-model="userData.username">
+	</div>
+	<div class="form-group">
+		<label for="firstName">First name:</label>
+		<input type="text" name="firstName" class="form-control" ng-model="userData.firstName">
+	</div>
+	<div class="form-group">
+		<label for="lastName">Last name:</label>
+		<input type="text" name="lastName" class="form-control" ng-model="userData.lastName">
+	</div>
+	<butten type="submit" ng-click="updateUser()" class="btn btn-primary">Update User</butten>
+	<a ui-sref="index" class="btn btn-default">Back</a>
+</form>

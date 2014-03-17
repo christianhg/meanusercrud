@@ -1,0 +1,48 @@
+%clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin responsive($width) {
+	@if $width == width-small {
+		@media only screen and (min-width: $width-small) {
+			@content;
+		}
+	}
+	@else if $width == width-medium {
+		@media only screen and (min-width: $width-medium) {
+			@content;
+		}
+	}
+	@else if $width == width-large {
+		@media only screen and (min-width: $width-large) {
+			@content;
+		}
+	}
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+%flaticon {
+	font-family: 'Flaticons Stroke';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+@mixin flaticon($icon) {
+	&:before {
+		content: $icon;
+	}
+}
