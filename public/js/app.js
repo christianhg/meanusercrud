@@ -24874,11 +24874,11 @@ angular.module('ngResource', ['ng']).
 
 var usercrud = angular.module('userApp', [
 	'ui.router',
-	'userControllers', 
+	'userControllers',
 	'userServices'
 ]);
 
-usercrud.config(['$stateProvider', '$urlRouterProvider', 
+usercrud.config(['$stateProvider', '$urlRouterProvider',
 	function($stateProvider, $urlRouterProvider) {
 		$urlRouterProvider.otherwise('/');
 		$stateProvider
@@ -24934,7 +24934,7 @@ userControllers.controller('UserIndexCtrl', ['$scope', 'Users',
 	}]);
 
 
-userControllers.controller('UserEditCtrl', ['$scope', '$location', '$stateParams', 'Users', 
+userControllers.controller('UserEditCtrl', ['$scope', '$location', '$stateParams', 'Users',
 	function($scope, $location, $stateParams, Users) {
 		$scope.user = Users.get({id: $stateParams.id}, function(user) {
 			$scope.userData = {
@@ -24951,3 +24951,7 @@ userControllers.controller('UserEditCtrl', ['$scope', '$location', '$stateParams
 			});
 		};
 	}]);
+
+
+
+

@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    
+
     concurrent: {
         tasks: ['nodemon', 'watch'],
         options: {
@@ -12,18 +12,18 @@ module.exports = function(grunt) {
 
     nodemon: {
       dev: {
-        script: 'app.js'
+        script: 'server.js'
       }
     },
 
     watch: {
       js: {
         files: [
-          'src/js/app.js'
+          'public/src/js/app.js'
         ],
         tasks: [
-          'jshint', 
-          'concat', 
+          'jshint',
+          'concat',
           'uglify'
         ],
         options: {
@@ -32,10 +32,10 @@ module.exports = function(grunt) {
       },
       css: {
         files: [
-          'src/sass/*.scss'
+          'public/src/sass/*.scss'
         ],
         tasks: [
-          'sass', 
+          'sass',
           'cssmin'
         ],
         options: {
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
           'bower_components/angular/angular.js',
           'bower_components/angular-ui-router/release/angular-ui-router.js',
           'bower_components/angular-resource/angular-resource.js',
-          'src/js/app.js'
+          'public/src/js/*.js'
         ],
         dest: 'public/js/app.js',
       }
@@ -85,7 +85,7 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {
-          'public/css/style.css': 'src/sass/style.scss'
+          'public/css/style.css': 'public/src/sass/style.scss'
         }
       }
     },
@@ -102,7 +102,7 @@ module.exports = function(grunt) {
 
     jshint: {
       all: {
-        src: ['gruntfile.js', 'app.js', 'app/**/*.js', 'src/js/app.js'],
+        src: ['gruntfile.js', 'server.js', 'app/**/*.js', 'public/src/js/app.js'],
         options: {
             jshintrc: true
         }
@@ -110,7 +110,7 @@ module.exports = function(grunt) {
     }
 
   });
-  
+
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-contrib-concat');

@@ -1,8 +1,8 @@
 {
-  "name": "usercrud",
+  "name": "meanusercrud",
   "version": "0.1.0",
-  "description": "MEAN CRUD",
-  "main": "app.js",
+  "description": "MEAN USER CRUD",
+  "main": "server.js",
   "author": "Christian Grøngaard",
   "dependencies": {
     "express": "~4.0.0",
